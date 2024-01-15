@@ -1,0 +1,1492 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Zzz">
+  <meta name="generator" content="Zzz">
+  <title>IPA</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+
+    .long {
+      background-color: #feebdd;
+    }
+
+    .short {
+      background-color: #fef5ee;
+    }
+
+    .diphthongs {
+      background-color: #ffb67e;
+    }
+
+    .voiced {
+      background-color: #bbcbe5;
+    }
+
+    .unvoiced {
+      background-color: #d9e5c1;
+    }
+
+    .vowels {
+      background-color: #edcdaf;
+    }
+
+    .consonants {
+      background-color: #c6dacf;
+    }
+
+    .cursor_pointer {
+      cursor: pointer;
+    }
+
+    .row{
+      margin: 0px;;
+    }
+    .row>* {
+      padding: 0px;
+    }
+
+    .bt {
+      border-top: 1px solid #ffffff;
+    }
+
+    .bl {
+      border-left: 1px solid #ffffff;
+    }
+
+    .br {
+      border-right: 1px solid #ffffff;
+    }
+
+    .bb {
+      border-bottom: 1px solid #ffffff;
+    }
+
+    .phonemic {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      white-space: nowrap;
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body class="py-4" style="min-width: 900px;">
+  <main>
+    <div class="container">
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <iframe class="youtube" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-2  long">long <br/> âm dài</div>
+        <div class="col-2 short">short <br/> âm ngắn</div>
+        <div class="col-2 diphthongs">diphthongs <br/> nguyên âm đôi</div>
+        <div class="col-3 voiced">voiced <br/> hưu thanh <br/>(cổ họng rung)</div>
+        <div class="col-3 unvoiced">unvoiced <br/> vô thanh <br/>(cổ họng ko rung)</div>
+      </div>
+      <br/>
+
+      <div class="row mb-3 text-center">
+        <div class="col-1 vertical-text vowels">Vowels - Nguyên âm</div>
+        <div class="col-11">
+          <div class="row bb">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 i_long br"></div>
+                <div class="col-3 i_short br"></div>
+                <div class="col-3 u_long br"></div>
+                <div class="col-3 u_short br"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 ie_diphthongs br"></div>
+                <div class="col-3 ee_diphthongs br"></div>
+                <div class="col-3 ue_diphthongs br"></div>
+                <div class="col-3 ju_diphthongs"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row bb">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 ows_short br"></div><!-- /ʌ/ ớ-->
+                <div class="col-3 owf_short br"></div><!-- /ə/ ờ-->
+                <div class="col-3 owf_long br"></div><!-- /ɜː/ ơ dài-->
+                <div class="col-3 o_long br"></div><!-- /ɔː/ o-->
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 ei_diphthongs br"></div>
+                <div class="col-3 eu_diphthongs br"></div>
+                <div class="col-3 ai_diphthongs br"></div>
+                <div class="col-3 aie_diphthongs"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row bb">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 e_short br"></div>
+                <div class="col-3 e_bet_short br"></div>
+                <div class="col-3 a_long br"></div>
+                <div class="col-3 o_short br"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 oi_diphthongs br"></div>
+                <div class="col-3 br"></div>
+                <div class="col-3 au_diphthongs br"></div>
+                <div class="col-3 aue_diphthongs"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3 text-center">
+        <div class="col-1 vertical-text consonants">Consonants - Phụ âm</div>
+        <div class="col-11">
+          <div class="row bb">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 p_unvoiced br"></div>
+                <div class="col-3 b_voiced br"></div>
+                <div class="col-3 t_unvoiced br"></div>
+                <div class="col-3 d_voiced br"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 s_unvoiced br"></div>
+                <div class="col-3 ch_unvoiced br"></div>
+                <div class="col-3 tf_unvoiced br"></div>
+                <div class="col-3 k_unvoiced"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row bb">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 f_unvoiced br"></div>
+                <div class="col-3 v_voiced br"></div>
+                <div class="col-3 th_voiced br"></div>
+                <div class="col-3 dd_unvoiced br"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 z_voiced br"></div>
+                <div class="col-3 zz_voiced br"></div>
+                <div class="col-3 dzz_voiced br"></div>
+                <div class="col-3 g_voiced"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 m_voiced br"></div>
+                <div class="col-3 n_voiced br"></div>
+                <div class="col-3 nj_voiced br"></div>
+                <div class="col-3 j_voiced br"></div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-3 l_voiced br"></div>
+                <div class="col-3 w_voiced br"></div>
+                <div class="col-3 r_voiced br"></div>
+                <div class="col-3 h_unvoiced"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script>
+    const datas = [
+      {
+        'code': 'i_long',
+        'phonetic': 'i:',
+        'type': 'long',
+        'des': 'i kéo dài trong tiếng việt, miệng mở rộng như đang cười.',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_sheep_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=183',
+        'example': [
+          {
+            'word': 'eat',
+            'ipa': '/iːt/',
+            'mean': 'Ăn',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/e/eat/eat__/eat.mp3'
+          }, {
+            'word': 'seat',
+            'ipa': '/siːt/',
+            'mean': 'Ghế',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/sea/seat_/seat.mp3'
+          }, {
+            'word': 'need',
+            'ipa': '/niːd/',
+            'mean': 'Cần',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/k/kne/knead/knead.mp3'
+          }, {
+            'word': 'beat',
+            'ipa': '/biːt/',
+            'mean': 'Tiết tấu',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bea/beat_/beat.mp3'
+          }, {
+            'word': 'sheep',
+            'ipa': '/ʃiːp/',
+            'mean': 'Con cừu',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/she/sheep/sheep.mp3'
+          }
+        ]
+      }, {
+        'code': 'i_short',
+        'phonetic': 'ɪ',
+        'type': 'short',
+        'des': 'đọc như iê',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_ship_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=520',
+        'example': [
+          {
+            'word': 'it',
+            'ipa': '/ɪt/',
+            'mean': 'Nó',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/i/it_/it___/it.mp3'
+          }, {
+            'word': 'sit',
+            'ipa': '/sɪt/',
+            'mean': 'Ngồi',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/sit/sit__/sit.mp3'
+          }, {
+            'word': 'ship',
+            'ipa': '/ʃɪp/',
+            'mean': 'Tàu thủy',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/shi/ship_/ship.mp3'
+          }, {
+            'word': 'little',
+            'ipa': '/ˈlɪt̬.əl/',
+            'mean': 'Nhỏ bé',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/l/lit/littl/little.mp3'
+          }, {
+            'word': 'bit',
+            'ipa': '/bɪt/',
+            'mean': 'Chút',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bit/bit__/bit.mp3'
+          }
+        ]
+      }, {
+        'code': 'u_long',
+        'phonetic': 'uːʷ',
+        'type': 'long',
+        'des': 'đọc uw nhưng chưa bật w ra',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_blue_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=898',
+        'example': [
+          {
+            'word': 'food',
+            'ipa': '/fuːd/',
+            'mean': 'Thức ăn',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/f/foo/food_/food.mp3'
+          }, {
+            'word': 'cool',
+            'ipa': '/kuːl/',
+            'mean': 'Ngầu',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/c/coo/cool_/cool.mp3'
+          }, {
+            'word': 'school',
+            'ipa': '/skuːl/',
+            'mean': 'Trường học',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/sch/schoo/school.mp3'
+          }, {
+            'word': 'pool',
+            'ipa': '/puːl/',
+            'mean': 'Hồ bơi',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/p/poo/pool_/pool.mp3'
+          }, {
+            'word': 'blue',
+            'ipa': '/bluː/',
+            'mean': 'Màu xanh',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/ble/blew_/blew.mp3'
+          }
+        ]
+      }, {
+        'code': 'u_short',
+        'phonetic': 'ʊ',
+        'type': 'short',
+        'des': 'đọc ua',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_foot_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=1197',
+        'example': [
+          {
+            'word': 'good',
+            'ipa': '/gʊd/',
+            'mean': 'Tốt',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/g/goo/good_/good.mp3'
+          }, {
+            'word': 'book',
+            'ipa': '/bʊk/',
+            'mean': 'Sách',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/boo/book_/book.mp3'
+          }, {
+            'word': 'foot',
+            'ipa': '/fʊt/',
+            'mean': 'Chân',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/f/foo/foot_/foot.mp3'
+          }, {
+            'word': 'look',
+            'ipa': '/lʊk/',
+            'mean': 'Nhìn',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/l/loo/look_/look.mp3'
+          }, {
+            'word': 'full',
+            'ipa': '/fʊl/',
+            'mean': 'Đầy',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/f/ful/full_/full.mp3'
+          }
+        ]
+      }, {
+        'code': 'ie_diphthongs',
+        'phonetic': 'ɪə',
+        'type': 'diphthongs',
+        'des': 'đọc ìa ờ nhanh',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_phonetic/uk_phonetics_sound_ear_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=2866',
+        'example': [
+          {
+            'word': 'beer',
+            'ipa': '/bɪər/',
+            'mean': 'Bia',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukb/ukbee/ukbeer_001.mp3'
+          }, {
+            'word': 'here',
+            'ipa': '/hɪər/',
+            'mean': 'Ở đây',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukh/ukhea/ukheads020.mp3'
+          }
+        ]
+      }, {//6
+        'code': 'ee_diphthongs',
+        'phonetic': 'eə',
+        'type': 'diphthongs',
+        'des': 'đọc e ờ',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_phonetic/uk_phonetics_sound_hair_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3022',
+        'example': [
+          {
+            'word': 'hair',
+            'ipa': '/heər/',
+            'mean': 'Tóc',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukh/ukhae/ukhaema018.mp3'
+          }, {
+            'word': 'bear',
+            'ipa': '/beər/',
+            'mean': 'Con gấu',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukb/ukban/ukbanqu030.mp3'
+          }
+        ]
+      }, {
+        'code': 'ue_diphthongs',
+        'phonetic': 'ʊə',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3092',
+        'example': [
+          {
+            'word': 'sure',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'poor',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'ju_diphthongs',
+        'phonetic': 'juːʷ',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=4229',
+        'example': [
+          {
+            'word': 'you',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'new',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'owf_short',
+        'phonetic': 'ə',
+        'type': 'short',
+        'des': 'đọc ờ',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_phonetic/uk_phonetics_sound_above_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=1580',
+        'example': [
+          {
+            'word': 'about',
+            'ipa': '/əˈbaʊt/',
+            'mean': 'Về',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/a/abo/about/about.mp3'
+          }, {
+            'word': 'the',
+            'ipa': '/ðə/',
+            'mean': 'Các',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/t/the/the_0/the_01_00.mp3'
+          }
+        ]
+      }, {
+        'code': 'ows_short',
+        'phonetic': 'ʌ',
+        'type': 'short',
+        'des': 'đọc ớ',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_phonetic/uk_phonetics_sound_cup_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=1604',
+        'example': [
+          {
+            'word': 'but',
+            'ipa': '/bʌt/',
+            'mean': 'Nhưng',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/but/but__/but.mp3'
+          }, {
+            'word': 'shut',
+            'ipa': '/ʃʌt/',
+            'mean': 'Đóng',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/shu/shut_/shut.mp3'
+          }
+        ]
+      }, {
+        'code': 'owf_long',
+        'phonetic': 'ɜːʳ',
+        'type': 'long',
+        'des': 'đọc ơ dài, âm trừ trong cổ, có r ở cuối',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_bird_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=2336',
+        'example': [
+          {
+            'word': 'bird',
+            'ipa': '/bɜːʳd/',
+            'mean': 'Con chim',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_word_bird_2023feb.mp3'
+          }, {
+            'word': 'sir',
+            'ipa': '/sɜːʳ/',
+            'mean': 'Quý ngài',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/uks/uksin/uksinle011.mp3'
+          }, {
+            'word': 'earth',
+            'ipa': '/ɝːθ/',
+            'mean': 'Trái đất',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/e/ear/earth/earth.mp3'
+          }, {
+            'word': 'curse',
+            'ipa': '/kɝːs/',
+            'mean': 'Nguyền rủa',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/c/cur/curse/curse.mp3'
+          }, {
+            'word': 'burn',
+            'ipa': '/bɜːn/',
+            'mean': 'Đốt cháy',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bur/burn_/burn.mp3'
+          }
+        ]
+      }, {
+        'code': 'o_long',
+        'phonetic': 'ɔːʳ',
+        'type': 'long',
+        'des': 'đọc o dài, âm trong cổ ra, tròn miệng, có r sau',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_horse_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=2511',
+        'example': [
+          {
+            'word': 'order',
+            'ipa': '/ˈɔːʳ.dɚ/',
+            'mean': 'Đơn hàng',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/uko/ukora/ukorang022.mp3'
+          }, {
+            'word': 'four',
+            'ipa': '/fɔːr/',
+            'mean': 'Bốn',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/f/for/for__/for.mp3'
+          }, {
+            'word': 'door',
+            'ipa': '/dɔːr/',
+            'mean': 'Cửa',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/d/doo/door_/door.mp3'
+          }, {
+            'word': 'sore',
+            'ipa': '/sɔːr/',
+            'mean': 'Đau',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/s/soa/soar_/soar.mp3'
+          }, {
+            'word': 'your',
+            'ipa': '/jɚ/',
+            'mean': 'Của bạn',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/y/you/your_/your.mp3'
+          }
+        ]
+      }, {
+        'code': 'ei_diphthongs',
+        'phonetic': 'eɪ',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3192',
+        'example': [
+          {
+            'word': 'april',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'play',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'eu_diphthongs',
+        'phonetic': 'əʊʷ',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3506',
+        'example': [
+          {
+            'word': 'old',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'slow',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'ai_diphthongs',
+        'phonetic': 'aɪ',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3708',
+        'example': [
+          {
+            'word': 'wifi',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'why',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'aie_diphthongs',
+        'phonetic': 'aɪə',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=4002',
+        'example': [
+          {
+            'word': 'fire',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'desire',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'e_short',
+        'phonetic': 'e',
+        'type': 'short',
+        'des': 'đọc e',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_head_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=1796',
+        'example': [
+          {
+            'word': 'bed',
+            'ipa': '/bed/',
+            'mean': 'Giường',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bed/bed__/bed.mp3'
+          }, {
+            'word': 'pet',
+            'ipa': '/pet/',
+            'mean': 'Thú nuôi',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/p/pet/pet__/pet.mp3'
+          }, {
+            'word': 'bread',
+            'ipa': '/bred/',
+            'mean': 'Bánh mỳ',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bre/bread/bread.mp3'
+          }, {
+            'word': 'head',
+            'ipa': '/hed/',
+            'mean': 'Cái đầu',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/h/hea/head_/head.mp3'
+          }, {
+            'word': 'ready',
+            'ipa': '/ˈred.i/',
+            'mean': 'Sẵn sàng',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/r/rea/ready/ready.mp3'
+          }
+        ]
+      }, {
+        'code': 'e_bet_short',
+        'phonetic': 'æ',
+        'type': 'short',
+        'des': 'đọc a ngắn',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_phonetic/uk_phonetics_sound_hat_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=1840',
+        'example': [
+          {
+            'word': 'apple',
+            'ipa': '/ˈæp.əl/',
+            'mean': 'Quả táo',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/a/app/apple/apple.mp3'
+          }, {
+            'word': 'back',
+            'ipa': '/bæk/',
+            'mean': 'Lưng',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bac/back_/back.mp3'
+          }, {
+            'word': 'hat',
+            'ipa': '/hæt/',
+            'mean': 'Mũ',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/h/hat/hat__/hat.mp3'
+          }, {
+            'word': 'cat',
+            'ipa': '/kæt/',
+            'mean': 'Con mèo',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/c/cat/cat__/cat.mp3'
+          }, {
+            'word': 'bad',
+            'ipa': '/bæd/',
+            'mean': 'Xấu',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bad/bad__/bad.mp3'
+          }
+        ]
+      }, {
+        'code': 'a_long',
+        'phonetic': 'ɑːʳ',
+        'type': 'long',
+        'des': 'đọc a dài',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/us_phonetic/us_phonetics_sound_father_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=2112',
+        'example': [
+          {
+            'word': 'bark',
+            'ipa': '/bɑːrk/',
+            'mean': 'Vỏ cây',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/b/bar/bark_/bark.mp3'
+          }, {
+            'word': 'park',
+            'ipa': '/pɑːrk/',
+            'mean': 'Công viên',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/p/par/park_/park.mp3'
+          }, {
+            'word': 'card',
+            'ipa': '/kɑːrd/',
+            'mean': 'Thẻ',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/c/car/card_/card.mp3'
+          }, {
+            'word': 'far',
+            'ipa': '/fɑːr/',
+            'mean': 'Xa',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/f/far/far__/far.mp3'
+          }, {
+            'word': 'father',
+            'ipa': '/ˈfɑː.ðɚ/',
+            'mean': 'Bố',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/us_pron/c/cdo/cdo03/cdo0318usfath1774.mp3'
+          }
+        ]
+      }, {
+        'code': 'o_short',
+        'phonetic': 'ɒ',
+        'type': 'short',
+        'des': 'đọc o',
+        'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_phonetic/uk_phonetics_sound_sock_2023feb.mp3',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=2687',
+        'example': [
+          {
+            'word': 'hot',
+            'ipa': '/hɒt/',
+            'mean': 'Nóng',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukh/ukhor/ukhorsi025.mp3'
+          }, {
+            'word': 'not',
+            'ipa': '/nɒt/',
+            'mean': 'Không',
+            'audio': 'https://dictionary.cambridge.org/vi/media/english/uk_pron/u/ukk/ukkno/ukknock005.mp3'
+          }
+        ]
+      }, {
+        'code': 'oi_diphthongs',
+        'phonetic': 'ɔɪ',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3883',
+        'example': [
+          {
+            'word': 'boy',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'toy',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'au_diphthongs',
+        'phonetic': 'aʊʷ',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=3919',
+        'example': [
+          {
+            'word': 'now',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'down',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'aue_diphthongs',
+        'phonetic': 'aʊə',
+        'type': 'diphthongs',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=4168',
+        'example': [
+          {
+            'word': 'shower',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'hour',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'p_unvoiced',
+        'phonetic': 'p',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=4795',
+        'example': [
+          {
+            'word': 'pen',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'happy',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'b_voiced',
+        'phonetic': 'b',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=183',
+        'example': [
+          {
+            'word': 'ball',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'hobby',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 't_unvoiced',
+        'phonetic': 't',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=5332',
+        'example': [
+          {
+            'word': 'ten',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'got',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'd_voiced',
+        'phonetic': 'd',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=5829',
+        'example': [
+          {
+            'word': 'dog',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'word',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 's_unvoiced',
+        'phonetic': 's',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6023',
+        'example': [
+          {
+            'word': 'word',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'six',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'ch_unvoiced',
+        'phonetic': 'ʃ',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6110',
+        'example': [
+          {
+            'word': 'shop',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'nation',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'tf_unvoiced',
+        'phonetic': 'tʃ',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6405',
+        'example': [
+          {
+            'word': 'chat',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'teach',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'k_unvoiced',
+        'phonetic': 'k',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6962',
+        'example': [
+          {
+            'word': 'key',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'work',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'f_unvoiced',
+        'phonetic': 'f',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=5172',
+        'example': [
+          {
+            'word': 'fun',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'safe',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'v_voiced',
+        'phonetic': 'v',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=5172',
+        'example': [
+          {
+            'word': 'very',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'save',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'th_voiced',
+        'phonetic': 'θ',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=5532',
+        'example': [
+          {
+            'word': 'thank',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'both',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'dd_unvoiced',
+        'phonetic': 'ð',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=5883',
+        'example': [
+          {
+            'word': 'that',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'without',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'z_voiced',
+        'phonetic': 'z',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6023',
+        'example': [
+          {
+            'word': 'zoo',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'cozy',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'zz_voiced',
+        'phonetic': 'ʒ',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6257',
+        'example': [
+          {
+            'word': 'vision',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'measure',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'dzz_voiced',
+        'phonetic': 'dʒ',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6700',
+        'example': [
+          {
+            'word': 'gym',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'change',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'g_voiced',
+        'phonetic': 'g',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=6962',
+        'example': [
+          {
+            'word': 'game',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'hug',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'm_voiced',
+        'phonetic': 'm',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7043',
+        'example': [
+          {
+            'word': 'man',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'dumb',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'n_voiced',
+        'phonetic': 'n',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7115',
+        'example': [
+          {
+            'word': 'no',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'knife',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'nj_voiced',
+        'phonetic': 'ŋ',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7146',
+        'example': [
+          {
+            'word': 'uncle',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'angry',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'j_voiced',
+        'phonetic': 'j',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=4229',
+        'example': [
+          {
+            'word': 'yes',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'view',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'l_voiced',
+        'phonetic': 'l',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7277',
+        'example': [
+          {
+            'word': 'please',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'feel',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'w_voiced',
+        'phonetic': 'w',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7567',
+        'example': [
+          {
+            'word': 'one',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'what',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'r_voiced',
+        'phonetic': 'ʷr',
+        'type': 'voiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7590',
+        'example': [
+          {
+            'word': 'right',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'wrong',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }, {
+        'code': 'h_unvoiced',
+        'phonetic': 'h',
+        'type': 'unvoiced',
+        'des': 'xxx',
+        'audio': 'xxx',
+        'video': 'https://www.youtube.com/embed/DyYFwoITfXY?autoplay=1&start=7950',
+        'example': [
+          {
+            'word': 'who',
+            'ipa': 'xxxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }, {
+            'word': 'hungry',
+            'ipa': 'xxx',
+            'mean': 'xxx',
+            'audio': 'xxxx'
+          }
+        ]
+      }
+    ];
+    const exampleModal = document.getElementById('exampleModal')
+    if (exampleModal) {
+      exampleModal.addEventListener('show.bs.modal', event => {
+        const button = event.relatedTarget
+        const recipient = button.getAttribute('data-bs-whatever')
+        exampleModal.querySelector('.youtube').setAttribute("src", recipient)
+
+      })
+    }
+
+    function build(data) {
+      document.querySelector('.' + data.code).insertAdjacentHTML('beforeend', buildPhonetic(data));
+
+      document.querySelector('.' + data.code + ' .phonemic').addEventListener('click', event => {
+        var audio = new Audio(data.audio);
+        audio.play();
+      });
+
+      data.example.forEach(element => {
+        document.querySelector('.word_' + element.word).addEventListener('click', event => {
+          var audio = new Audio(element.audio);
+          audio.play();
+        });
+      });
+    }
+    function buildPhonetic(data) {
+      var html = '<div class="' + data.type + ' position-relative">';
+      html += '<span class="phonemic cursor_pointer" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="' + data.des + '">' +
+          data.phonetic +
+        '</span>' +
+        '<br />';
+      data.example.forEach(element => {
+        html += buildExample(element);
+      });
+
+      html += '<span class="position-absolute top-0 end-0 video cursor_pointer" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="' + data.video + '">' +
+        '<i class="bi bi-youtube"></i>' +
+        '</span>';
+
+      // html += '<span class="position-absolute bottom-0 start-0 info">'+
+      //   '<i class="bi bi-info-circle-fill"></i>'+
+      // '</span>';
+
+      html += '</div>';
+
+      return html;
+    }
+    function buildExample(data) {
+      return '<span class="word_' + data.word + ' audio cursor_pointer" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"' +
+        'data-bs-title="' + data.mean + ' ' + data.ipa + '">' +
+        data.word +
+        '</span>' +
+        '<br />';
+    }
+
+    build(datas.find(item => item.code === 'i_long'));
+    build(datas.find(item => item.code === 'i_short'));
+    build(datas.find(item => item.code === 'u_long'));
+    build(datas.find(item => item.code === 'u_short'));
+    build(datas.find(item => item.code === 'ie_diphthongs'));
+    build(datas.find(item => item.code === 'ee_diphthongs'));
+    build(datas.find(item => item.code === 'ue_diphthongs'));
+    build(datas.find(item => item.code === 'ju_diphthongs'));
+    build(datas.find(item => item.code === 'owf_short'));
+    build(datas.find(item => item.code === 'ows_short'));
+    build(datas.find(item => item.code === 'owf_long'));
+    build(datas.find(item => item.code === 'o_long'));
+    build(datas.find(item => item.code === 'ei_diphthongs'));
+    build(datas.find(item => item.code === 'eu_diphthongs'));
+    build(datas.find(item => item.code === 'ai_diphthongs'));
+    build(datas.find(item => item.code === 'aie_diphthongs'));
+    build(datas.find(item => item.code === 'e_short'));
+    build(datas.find(item => item.code === 'e_bet_short'));
+    build(datas.find(item => item.code === 'a_long'));
+    build(datas.find(item => item.code === 'o_short'));
+    build(datas.find(item => item.code === 'oi_diphthongs'));
+    build(datas.find(item => item.code === 'au_diphthongs'));
+    build(datas.find(item => item.code === 'aue_diphthongs'));
+    build(datas.find(item => item.code === 'p_unvoiced'));
+    build(datas.find(item => item.code === 'b_voiced'));
+    build(datas.find(item => item.code === 't_unvoiced'));
+    build(datas.find(item => item.code === 'd_voiced'));
+    build(datas.find(item => item.code === 's_unvoiced'));
+    build(datas.find(item => item.code === 'ch_unvoiced'));
+    build(datas.find(item => item.code === 'tf_unvoiced'));
+    build(datas.find(item => item.code === 'k_unvoiced'));
+    build(datas.find(item => item.code === 'f_unvoiced'));
+    build(datas.find(item => item.code === 'v_voiced'));
+    build(datas.find(item => item.code === 'th_voiced'));
+    build(datas.find(item => item.code === 'dd_unvoiced'));
+    build(datas.find(item => item.code === 'z_voiced'));
+    build(datas.find(item => item.code === 'zz_voiced'));
+    build(datas.find(item => item.code === 'dzz_voiced'));
+    build(datas.find(item => item.code === 'g_voiced'));
+    build(datas.find(item => item.code === 'm_voiced'));
+    build(datas.find(item => item.code === 'n_voiced'));
+    build(datas.find(item => item.code === 'nj_voiced'));
+    build(datas.find(item => item.code === 'j_voiced'));
+    build(datas.find(item => item.code === 'l_voiced'));
+    build(datas.find(item => item.code === 'w_voiced'));
+    build(datas.find(item => item.code === 'r_voiced'));
+    build(datas.find(item => item.code === 'h_unvoiced'));
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  </script>
+
+</body>
+
+</html>
